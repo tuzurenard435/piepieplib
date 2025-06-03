@@ -1,9 +1,17 @@
-local ui_options = {
-	main_color = Color3.fromRGB(41, 74, 122),
-	min_size = Vector2.new(400, 300),
-	toggle_key = Enum.KeyCode.RightShift,
-	can_resize = true,
-}
+local window = library:AddWindow("Silence | Farming Version", {
+    main_color = Color3.fromRGB(0, 0, 0),
+    min_size = Vector2.new(500, 500),
+    can_resize = true,
+})
+
+-- Fenstertitel-Schriftart ändern, falls der Titel als TextLabel gerendert wird
+local windowTitleLabel = window:FindFirstChild("TitleLabel")  -- Dieser Name könnte variieren, abhängig von der Bibliothek
+if windowTitleLabel then
+    windowTitleLabel.Font = Enum.Font.PatrickHand  -- Ändert die Schriftart des Titels
+    windowTitleLabel.TextSize = 28  -- Ändert die Schriftgröße des Titels
+    windowTitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)  -- Optional: Ändert die Textfarbe
+end
+
 
 do
 	local imgui = game:GetService("CoreGui"):FindFirstChild("imgui")
